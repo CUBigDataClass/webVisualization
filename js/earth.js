@@ -1,19 +1,19 @@
-//THIS IS THE ONE I"M WORKING ON SOB 
-
+//Dasha'sthing
 	
 
 
 
 (function () {
+	function adddata(){
 	var data ;
 	data = new XMLHttpRequest();
 
 	results = []
-	data.open('get', 'beergeo4.txt', true); 
+	data.open('get', 'beergeo'+j+'.txt', true); 
 	data.onreadystatechange= boom;
 	data.send(null);
 	
-		function boom() {
+	function boom() {
 	if(data.readyState==4) {
 	data2=data.responseText;
 	
@@ -32,11 +32,13 @@
     var points = addPoints(results);
 
 
-  
+  	}
 	}
+	j=j+1;
 	}
 	
-
+	var j = 4;
+	setInterval(adddata,1000);
 	var webglEl = document.getElementById('webgl');
 
 	if (!Detector.webgl) {
